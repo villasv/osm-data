@@ -4,4 +4,7 @@ separator. https://wiki.openstreetmap.org/wiki/Tag:cuisine%3Dcoffee_shop */
 
 select *
 from {{ source('osm', 'planet_nodes') }}
-where ('cuisine', 'coffee_shop') in unnest(all_tags)
+where exists (
+    select * from unnest(all_tags)
+    where key = 'cuisine' and value like '%coffee_shop%'
+)
