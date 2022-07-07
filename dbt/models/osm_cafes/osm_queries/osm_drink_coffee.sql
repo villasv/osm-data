@@ -3,4 +3,4 @@
 
 select *
 from {{ source('osm', 'planet_nodes') }}
-where ('drin:coffee', 'yes') in unnest(all_tags)
+where ('drink:coffee', 'yes') in unnest(all_tags)
