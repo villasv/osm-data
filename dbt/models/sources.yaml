@@ -5,6 +5,7 @@ sources:
     schema: geo_openstreetmap
     tables:
       - name: planet_nodes
+      - name: planet_features
 
   - name: vancouver
     database: osm-walkability
