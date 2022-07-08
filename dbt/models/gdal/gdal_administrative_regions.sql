@@ -7,4 +7,5 @@ where
   feature_type="multipolygons"
   and 'name:en' in (select key from unnest(all_tags))
   and ('boundary', 'administrative') in unnest(all_tags)
-  and (select value from unnest(all_tags) where key = 'admin_level') in ('2', '3', '4')
+  and (select value from unnest(all_tags) where key = 'admin_level')
+    in ('2', '3', '4', '5', '6', '7', '8')
