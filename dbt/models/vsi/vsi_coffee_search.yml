@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: vancouver_storefronts_coffee_search
+  - name: vsi_coffee_search
     columns:
       - name: id
         tests:
