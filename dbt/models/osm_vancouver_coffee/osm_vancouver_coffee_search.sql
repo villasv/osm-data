@@ -1,5 +1,5 @@
 select *
-from {{ source('osm', 'planet_nodes') }}
+from {{ ref('osm_vancouver') }}
 where exists (
   select * from unnest(all_tags)
   where key like '%coffee%' or value like '%coffee%'
