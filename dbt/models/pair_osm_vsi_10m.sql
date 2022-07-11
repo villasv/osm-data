@@ -3,6 +3,8 @@ select
   vsi.id as vsi_id,
   osm.name as osm_name,
   vsi.business_name as vsi_name,
+  {{ normalize('osm.name') }} as norm_osm_name,
+  {{ normalize('vsi.business_name') }} as norm_vsi_name,
   osm.geometry as osm_geometry,
   vsi.geometry as vsi_geometry,
   st_distance(vsi.geometry, osm.geometry) as distance
