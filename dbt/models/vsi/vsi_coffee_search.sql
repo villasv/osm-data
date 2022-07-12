@@ -1,8 +1,8 @@
 with storefronts_inventory_ranked as (
-select
-  *,
-  rank() over (partition by id order by year_recorded desc) as rank
-from {{ source('vancouver', 'storefronts_inventory') }}
+  select
+    *,
+    rank() over (partition by id order by year_recorded desc) as rank
+  from {{ source('vancouver', 'storefronts_inventory') }}
 )
 
 select
